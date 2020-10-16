@@ -68,25 +68,27 @@ public class Main extends PApplet implements OnMessageListener{
 		String strDateFormat = "hh: mm: ss";
 		SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
 		
-		
-		switch(product) {
-		case "Pizza":
-			orders.add(new Order(this, numberProduct+"", loadImage("./img/pizza.jpg"), objSDF.format(objDate) ,ip));
-			numberProduct++;
-			break;
-		case "Burger":
-			orders.add(new Order(this, numberProduct+"", loadImage("./img/burger.jpg"), objSDF.format(objDate) ,ip));
-			numberProduct++;
-			break;
-		case "Fries":
-			orders.add(new Order(this, numberProduct+"", loadImage("./img/frenchfries.jpg"), objSDF.format(objDate) ,ip));
-			numberProduct++;
-			break;
-		case "Malteada":
-			orders.add(new Order(this, numberProduct+"", loadImage("./img/batidos.jpg"), objSDF.format(objDate) ,ip));
-			numberProduct++;
-			break;
+		if(orders.size()<8) {
+			switch(product) {
+			case "Pizza":
+				orders.add(new Order(this, numberProduct+"", loadImage("./img/pizza.jpg"), objSDF.format(objDate) ,ip));
+				numberProduct++;
+				break;
+			case "Burger":
+				orders.add(new Order(this, numberProduct+"", loadImage("./img/burger.jpg"), objSDF.format(objDate) ,ip));
+				numberProduct++;
+				break;
+			case "Fries":
+				orders.add(new Order(this, numberProduct+"", loadImage("./img/frenchfries.jpg"), objSDF.format(objDate) ,ip));
+				numberProduct++;
+				break;
+			case "Malteada":
+				orders.add(new Order(this, numberProduct+"", loadImage("./img/batidos.jpg"), objSDF.format(objDate) ,ip));
+				numberProduct++;
+				break;
+			}
 		}
+		
 	}
 	
 	
